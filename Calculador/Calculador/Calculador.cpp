@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <Windows.h>
+#include <stdio.h>
 #include "Calculos.h"
 void gotoxy(int x, int y)
 {
@@ -21,6 +22,7 @@ int main()
 {
 	double x = 0.0, y = 0.0, result = 0.0;
 	char oper = '+';
+	system ("color B3");
 	gotoxy(45, 10);
 	cout << "+++++++++++++++++++++++++++++\n\n";
 	gotoxy(45, 11);
@@ -36,11 +38,13 @@ int main()
 		cin >> x >> oper >> y;
 		if (oper == '/' && y == 0) {
 			gotoxy(45, 15);
+			system("color B4");
 			cout << "la divicion entre 0 no es valida\n";
 			continue;
 		}
 		else{
 		result = c.Calculo(x, oper, y);
+		system("color B0");
 		gotoxy(45, 15);
 			cout   << "El resultado es : " << result << endl;
 		}
